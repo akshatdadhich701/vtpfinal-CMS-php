@@ -88,136 +88,7 @@ body {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
- /*.feetxt {
-      display: none;
-    }
-
-    .wrapper {
-      width: 100%;
-      height: 100vh;
-
-      display: none;
-    }
-
-    .factxt {
-      width: 100%;
-      height: 100%;
-    }
-
-    .cards {
-      width: 100%;
-      height: 100%;
-      margin: 4vw 2vw;
-    }
-
-    .card {
-      width: 25%;
-      height: 40%;
-      display: inline-block;
-      margin-top: 2vw;
-      margin-left: 3vw;
-    }
-
-    .card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .students {
-      width: 83.5%;
-      min-height: 80vh;
-
-      position: relative;
-   
-    }
-
-    .sem5 {
-      width: 100%;
-      height: 20vh;
-
-      padding: 1vw 2vw;
-
-      position: relative;
-    }
-
-    .sem5 h1 {
-      text-align: center;
-      font-size: 30px;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    i {
-      font-size: 20px;
-    }
-
-    td {
-      font-size: 20px;
-    }
-
-    .addition h1>i {
-      font-size: 40px;
-      color: black;
-    }
-
-    .addition h1>i:hover {
-      color: teal;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-
-      display: none;
-      z-index: 99;
-    }
-
-    .form {
-      width: 100%;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.9);
-      margin: 6.5vw auto;
-      position: relative;
-      display: none;
-      color: white;
-      padding: 2vw 20vw;
-      top: -15%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .cross {
-      color: black;
-      display: none;
-      right: 1%;
-      position: absolute;
-
-      width: 2%;
-      text-align: center;
-    }
-
-    .cross:hover {
-      cursor: pointer;
-    }
-
-    form {
-      width: 100%;
-      height: 80%;
-
-      padding: 2vw 3vw;
-    } */
+ 
     .st{
         color:white;
     }
@@ -272,13 +143,110 @@ tr,td,th{
      
      
 }
+.logout {
+            position: fixed;
+            top: 1vw;
+            right: 10px;
+        }
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #2F2F2F;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 5vw;
+            color:black;
+          
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            display: block;
+            transition: 0.3s;
+            color:#FE6F27;
+        }
+
+        .sidebar a:hover {
+           color:#2F2F2F;
+           background-color:#FE6F27;
+           border-radius:0 13px 0 30px; 
+           transition:all .5s ease;
+           transform:translateY(-2px);
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 150px;
+            color:#FE6F27;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color:#FE6F27;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+           
+            position: fixed;
+            top: 10px;
+            z-index: 999999;
+        }
+
+        .openbtn:hover {
+           
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+            margin-left: 250px;
+        }
+
+        .card {
+            margin: 20px;
+        }
+        a{
+            text-decoration:none;
+        }
+        .dropdown-content,.dropdown-content1{
+            display:none;
+        }
+        .logout{
+            position:fixed;
+            top:.5vw;
+            right:10px;
+        }
+        .rt{
+            position:absolute;
+            left:10px;
+            background color:#2F2F2F;
+        }
+        .overlay{
+            width:100%;
+            height:10vh;
+            background-color:#2F2F2F;
+            position:absolute;
+            left:0;
+            top:-10%;
+            z-index:-9;
+        }
 </style>
 </head>
 <body>
   
 <div class="logout">
 <form action="" method="post">
-  <button class="logout" name="logout">Logout</button>
+  <button class="logout btn btn-danger" name="logout">Logout</button>
   </form>
 </div>
 
@@ -296,33 +264,32 @@ if($_SESSION['email'] ==true){
   ?>
 
 
+<div class="overlay"></div>
 <div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="home.php" class="">HOME</a>
-
-  <a href="time.php" class="time">Time Table</a>
-  <a href="learn.php" class="learn">Learning Material</a>
-  <a href="fees.php" class="fees">Fees</a>
-  <a href="faculty.php" class="fac">Faculty</a>
-  <div class="dropdown">  
-  <div class="dropdown-content">
-    <a href="#" class="add">Add Faculty</a>
-    <a href="#" class="check">Check Faculty</a>
-  </div>
- 
-</div>
-<a href="#" class="st">Students</a>
-  <div class="dropdown">
-     <div class="dropdown-content1">
-      <a href="#" class="addstud" data-target="#addStudentModal" data-toggle="modal">Add Student</a>
-      <a href="#check" class="checkstud">Check Students</a>
+ <span class="span" style="background-color:none;font-size:2vw; position:absolute;top : 10px;color:white;left:220px;cursor:pointer;color:#FE6F27" onclick="closeNav()" >x</span>
+    <a href="home.php" class="time" >Home</a>
+    <a href="time.php" class="time">Time Table</a>
+    <a href="learn.php" class="learn">Learning Material</a>
+    <a href="fees.php" class="fees">Fees</a>
+    <a href="faculty.php" class="fac">Faculty</a>
+    <div class="dropdown">
+        <div class="dropdown-content">
+            <a href="#" class="add">Add Faculty</a>
+            <a href="#" class="check">Check Faculty</a>
+        </div>
     </div>
-  </div>
- 
-
+    <a href="#" class="st" style="color:white">Students</a>
+    <div class="dropdown">
+        <div class="dropdown-content1">
+            <a href="#" class="addstud" data-target="#addStudentModal" data-toggle="modal">Add Student</a>
+            <a href="#check" class="checkstud">Check Students</a>
+        </div>
+    </div>
 </div>
+
 <div id="main">
-  <button class="openbtn" onClick="openNav()">☰ Admin Panel</button>
+    <button class="openbtn rt" onclick="openNav()">☰ Admin Panel</button>
+
     <div class="mo">
             <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="addStudentModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -567,6 +534,7 @@ else{
 ?>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -577,6 +545,26 @@ else{
 <script src="scr.js"></script>
    
    <script>
+     var t1=gsap.timeline();
+t1.from('.sidebar',{
+    x:-4000,
+    opacity:1,
+    duration:.6
+})
+t1.from('.openbtn',{
+    y:-100,
+   
+})
+    t1.to('.overlay',{
+        y:"65"
+    })
+    t1.from('.logout',{
+        y:"-45"
+    })
+    t1.from('.gsa',{
+        y:190,
+        stagger:.2
+    })
      document.addEventListener('DOMContentLoaded', function () {
         const searchInput = document.getElementById('searchInput');
         const tableBody = document.getElementById('studentTableBody').getElementsByTagName('tr');
