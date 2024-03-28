@@ -308,7 +308,7 @@ if($_SESSION['email'] ==true){
     </div>
 </div>
 
-<div id="main">
+<div id="main" >
     <button class="openbtn rt" onclick="openNav()">☰ Admin Panel</button>
 
     <div class="mo">
@@ -490,7 +490,7 @@ else{
 ?>
 
 
-<div style="">
+<div style="min-width:100%;background-color:red;">
 <div class="facultymain" >
                 
              <?php
