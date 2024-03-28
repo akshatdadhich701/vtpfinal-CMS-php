@@ -212,6 +212,7 @@ session_start();
  <span class="span" style="background-color:none;font-size:2vw; position:absolute;top : 10px;color:white;left:220px;cursor:pointer;color:#FE6F27" onclick="closeNav()" >x</span>
     <a href="#" class="time" style="color:white">Home</a>
     <a href="time.php" class="time">Time Table</a>
+    <a href="att.php" class="time">Attendance</a>
     <a href="learn.php" class="learn">Learning Material</a>
     <a href="fees.php" class="fees">Fees</a>
     <a href="faculty.php" class="fac">Faculty</a>

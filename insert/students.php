@@ -246,7 +246,7 @@ tr,td,th{
   
 <div class="logout">
 <form action="" method="post">
-  <button class="logout btn btn-danger" name="logout">Logout</button>
+  <button class="logout btn btn-danger" name="logout" style="position:fixed;">Logout</button>
   </form>
 </div>
 
@@ -264,11 +264,12 @@ if($_SESSION['email'] ==true){
   ?>
 
 
-<div class="overlay"></div>
+<div class="overlay" style="position:fixed;"></div>
 <div id="mySidebar" class="sidebar">
- <span class="span" style="background-color:none;font-size:2vw; position:absolute;top : 10px;color:white;left:220px;cursor:pointer;color:#FE6F27" onclick="closeNav()" >x</span>
+ <span class="span" style="background-color:none;font-size:2vw; position:fixed;top:10px;color:white;left:220px;cursor:pointer;color:#FE6F27" onclick="closeNav()" >x</span>
     <a href="home.php" class="time" >Home</a>
     <a href="time.php" class="time">Time Table</a>
+    <a href="att.php" class="time">Attendance</a>
     <a href="learn.php" class="learn">Learning Material</a>
     <a href="fees.php" class="fees">Fees</a>
     <a href="faculty.php" class="fac">Faculty</a>
@@ -288,7 +289,7 @@ if($_SESSION['email'] ==true){
 </div>
 
 <div id="main">
-    <button class="openbtn rt" onclick="openNav()">☰ Admin Panel</button>
+    <button class="openbtn rt" onclick="openNav()" style="position:fixed;">☰ Admin Panel</button>
 
     <div class="mo">
             <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="addStudentModalLabel" aria-hidden="true">
@@ -446,7 +447,7 @@ if($_SESSION['email'] ==true){
 
 
 
- <div class="student">
+ <div class="student" >
     <div class="heading">
         <div class="stu"><h1>Students</h1></div>
 
@@ -455,7 +456,7 @@ if($_SESSION['email'] ==true){
 <div class="display_student">
         <div class="container mt-5">
             <input type="text" class="form-control mb-3" id="searchInput" placeholder="Search...">
-            <div class="">
+            <div class="" >
                 <table class="table table-striped table-bordered">
                     <thead class="thead-dark">
                         <tr>
