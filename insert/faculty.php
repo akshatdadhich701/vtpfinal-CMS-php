@@ -250,11 +250,16 @@ display:none;
         .cardfac:hover{
 transform:translateY(-10px);
 transition:all .5s ease;
-box-shadow:2px 2px 2px black;
+box-shadow:2px 7px 2px grey;
+scale:1.1;
 
         }
        .card{
         border:2px solid black;
+        transform:translateY(-20px);
+        display:inline-block;
+        white-space:nowarp;
+      
        }
         .facultymain{
             margin-top:15vw;
@@ -308,8 +313,8 @@ if($_SESSION['email'] ==true){
     </div>
 </div>
 
-<div id="main" >
-    <button class="openbtn rt" onclick="openNav()">☰ Admin Panel</button>
+<div id="main" style="position:relative;">
+    <button class="openbtn rt" onclick="openNav()" style="position:fixed;">☰ Admin Panel</button>
 
     <div class="mo">
             <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="addStudentModalLabel" aria-hidden="true">
@@ -490,7 +495,7 @@ else{
 ?>
 
 
-<div style="min-width:100%;background-color:red;">
+<div style="width:100%;position:absolute;left:10%;top:-2%;">
 <div class="facultymain" >
                 
              <?php
@@ -499,8 +504,8 @@ else{
                         $result = mysqli_query($con, $select);
                         while ($row = mysqli_fetch_array($result)) {
                             ?>
-                           <div class="card cardfac" style="width: 18rem;">
-  <img class="card-img-top" src="<?php echo $row['img']?>" alt="Card image cap">
+                           <div class="card cardfac" style="width: 18rem;border-radius:20px">
+  <img class="card-img-top" src="<?php echo $row['img']?>" alt="Card image cap" width="18rem" height="250vh" style="border-radius:20px;border:2px solid black;">
   <div class="card-body">
     <p class="card-text">NAME:  <?php echo $row['name'] ?></p>
   </div>
@@ -589,6 +594,11 @@ t1.from('.openbtn',{
     })
     t1.from('.logout',{
         y:"-45"
+    })
+    t1.from('.cardfac',{
+y:-10000,
+duration:.6,
+stagger:.4
     })
   
      document.addEventListener('DOMContentLoaded', function () {
