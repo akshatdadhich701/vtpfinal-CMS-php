@@ -319,7 +319,7 @@ if($_SESSION['email'] ==true){
         <input type="text" id="subjectInput">
         <button onclick="generateTimetables()">Generate Timetable</button>
     </div>
-    <div id="timetables">
+    <div id="timetables"  >
        
     </div>
 

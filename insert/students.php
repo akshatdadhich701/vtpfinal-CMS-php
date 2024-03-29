@@ -14,6 +14,7 @@ session_start();
     rel="stylesheet"
 />
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <style>
 body {
   font-family: "Lato", sans-serif;
@@ -240,9 +241,18 @@ tr,td,th{
             top:-10%;
             z-index:-9;
         }
+        .display_student{
+display:none;
+        }
 </style>
 </head>
 <body>
+<div class="ov" style="width:100%;height:100%;position:absolute;background-color:rgba(0,0,0,0.7);z-index:-11111111111"></div>
+<div class="videos" style="min-height:100vh;position:absolute;z-index:-222222222222">
+    <video autoplay muted loop src="../videos/4301307-hd_1920_1080_30fps.mp4"></video>
+</div>
+
+
   
 <div class="logout">
 <form action="" method="post">
@@ -448,8 +458,8 @@ if($_SESSION['email'] ==true){
 
 
  <div class="student" >
-    <div class="heading">
-        <div class="stu"><h1>Students</h1></div>
+    <div class="heading" style="margin-top:5vw;">
+        <div class="stu" ><h1>Students</h1></div>
 
 </div>
 
@@ -499,33 +509,48 @@ if($_SESSION['email'] ==true){
         </div>
     </div>
 
-  
 
 
 
+    <div class="dispmain" >
+        <div class="container mt-5" style="margin:-2vw 0">
+           <div class="" style="">
+                
+                        
+                        <?php
+                        require('conn.php');
+                        $select = "SELECT * FROM students";
+                        $result = mysqli_query($con, $select);
+                        while ($row = mysqli_fetch_array($result)) {
+                            ?>
+                          <div class="container utf" style="position:relative;z-index:-9999999;"data-aos="zoom-in">
+    <div class="card mx-auto" style="width: 48rem;height:8.5rem;overflow:hidden;border:1px solid black;border-radius:20px">
+        <div class="row no-gutters">
+            <div class="col-md-4" style="background-color:#a89884;">
+              
+                <img src="<?php echo $row['img'] ?>" width="20px" height="160px" class="card-img" alt="..." style="background-color:#a89884;">
+            </div>
+            <div class="col-md-8" style="background-color:#a89884;color:white;">
+                <div class="card-body" style="background-color:#a89884;">
+             
+                    <h5 class="card-title">Student Id &nbsp;:&nbsp;&nbsp;<?php echo $row['student_id'] ?></h5>
+                 
+                    <h5 class="card-text">Name  &nbsp;:&nbsp;&nbsp;  <?php echo $row['name'] ?></h5>
+                   <h5>Section  &nbsp;:&nbsp;&nbsp;  <?php echo $row['sec'] ?> </h5> 
+                   <h5>Semester  &nbsp;:&nbsp;&nbsp; <?php echo $row['semester'] ?> </h5>
+                    <div class="d-flex justify-content-between align-items-center">
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                                      
+</div>                  <?php } ?>
+                   
+            </div>
+        </div>
+    </div>
 
 <?php
 }
@@ -540,12 +565,15 @@ else{
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 <script src="scr.js"></script>
    
    <script>
+  AOS.init();
+
+    console.log(st)
      var t1=gsap.timeline();
 t1.from('.sidebar',{
     x:-4000,
@@ -562,10 +590,18 @@ t1.from('.openbtn',{
     t1.from('.logout',{
         y:"-45"
     })
-    t1.from('.gsa',{
-        y:190,
-        stagger:.2
-    })
+   var addstud=document.querySelector('.addstud');
+   var dispmain=document.querySelector('.dispmain');
+   var display_student=document.querySelector('.display_student');
+   var checkstud=document.querySelector('.checkstud');
+
+   addstud.addEventListener('click',function(){
+    display_student.style.display="none"; 
+    dispmain.style.display="none";
+   })
+   checkstud.addEventListener('click',function(){
+    display_student.style.display="block"; 
+   })
      document.addEventListener('DOMContentLoaded', function () {
         const searchInput = document.getElementById('searchInput');
         const tableBody = document.getElementById('studentTableBody').getElementsByTagName('tr');
@@ -607,6 +643,8 @@ fac.addEventListener('click', function(){
 })
 count1=1
 st.addEventListener('click', function(){
+    document.querySelector('.dispmain').style.display="block";
+    display_student.style.display="none";
   if(count1==1){
     dropdown_content1.style.display='block';
     count1=0;

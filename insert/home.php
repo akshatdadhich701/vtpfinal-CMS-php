@@ -132,6 +132,9 @@ session_start();
             margin-left: 150px;
             color:#FE6F27;
         }
+        body{
+            overflow: hidden;
+        }
 
         .openbtn {
             font-size: 20px;
@@ -189,10 +192,13 @@ session_start();
 </head>
 
 <body>
-
-    <div class="logout">
+    <div class="ov" style="width:100%;height:100%;position:absolute;background-color:rgba(0,0,0,0.7);z-index:-1"></div>
+<div class="videos" style="position:absolute;z-index:-2">
+    <video autoplay muted loop src="../videos/4301307-hd_1920_1080_30fps.mp4"></video>
+</div>
+    <div class="logout" style="z-index:9;position:fixed;">
         <form action="" method="post">
-            <button class="btn btn-danger logout" name="logout">Logout</button>
+            <button class="btn btn-danger logout" name="logout" >Logout</button>
         </form>
     </div>
 
@@ -207,9 +213,9 @@ session_start();
     if ($_SESSION['email'] == true) {
     ?>
 
-<div class="overlay"></div>
-<div id="mySidebar" class="sidebar">
- <span class="span" style="background-color:none;font-size:2vw; position:absolute;top : 10px;color:white;left:220px;cursor:pointer;color:#FE6F27" onclick="closeNav()" >x</span>
+<div class="overlay" style="z-index:2"></div>
+<div id="mySidebar" class="sidebar" style="z-index:2">
+ <span class="span" style="background-color:none;;font-size:2vw; position:absolute;top : 10px;color:white;left:220px;cursor:pointer;color:#FE6F27" onclick="closeNav()" ><div style="position:absolute;z-index:99;">x</div></span>
     <a href="#" class="time" style="color:white">Home</a>
     <a href="time.php" class="time">Time Table</a>
     <a href="att.php" class="time">Attendance</a>
@@ -252,9 +258,9 @@ session_start();
             $totalcourse = $row2['cou'];
             ?>
             <div class="container mt-5">
-                <div class="row" style="overflow:hidden">
+                <div class="row" style="overflow:hidden;z-index:55;">
                     <div class="col-lg-6 gsa">
-                        <div class="card  text-white shadow-lg" style="background-color:#A87387">
+                        <div class="card  text-white shadow-lg" style="background-color:#5F5243">
                             <div class="card-body">
                                 <h5 class="card-title">Students</h5>
                                 <p class="card-text">Total number of Students: <strong><?php echo $totalStudents ?></strong></p>
@@ -264,7 +270,7 @@ session_start();
                         </div>
                     </div>
                     <div class="col-lg-6 gsa">
-                        <div class="card  text-white shadow-lg" style="background-color:#4A90E2">
+                        <div class="card  text-white shadow-lg" style="background-color:#5F5243">
                             <div class="card-body">
                                 <h5 class="card-title">Faculty</h5>
                                 <p class="card-text">Total number of Faculty: <strong><?php echo $totalFac ?></strong></p>
@@ -275,7 +281,7 @@ session_start();
                 </div>
                 <div class="row mt-4" style="overflow:hidden">
                     <div class="col-lg-6  gsa offset-lg-3">
-                        <div class="card  text-white shadow-lg" style="background-color:#3CB371">
+                        <div class="card  text-white shadow-lg" style="background-color:#5F5243">
                             <div class="card-body text-center">
                                 <h5 class="card-title">Courses</h5>
                                 <p class="card-text">Total number of courses: <strong><?php echo $totalcourse ?></strong></p>

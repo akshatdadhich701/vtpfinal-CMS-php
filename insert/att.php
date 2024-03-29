@@ -317,7 +317,7 @@ session_start();
 
 
 
-      <div class="student" style="width:80%;border-radius:20px;padding:1vw 1vw;border:2px solid black;margin-top:5vw;background-color:#BEBEBE;opacity:0">
+      <div class="student" style="width:80%;border-radius:20px;padding:1vw 1vw;margin:5vw 9vw;background-color:#5F5243;opacity:0;font-weight:bold;text-transform:uppercase;">
         <div class="heading">
           <div class="stu">
             <h1 style="color:black;">Students</h1>
@@ -361,7 +361,7 @@ session_start();
                 </select>
                 </div>
   
-                <input type="submit" name="search" value="search" class="btn btn-primary">
+                <input type="submit" name="search" value="search" class="btn btn-primary" style="margin-left:-7vw;">
                 </div>
 
                 <div style="display:flex;align-item:flex-start;gap:4vw;margin:1vw;">
@@ -451,7 +451,7 @@ session_start();
             ?>
 
             </form>
-
+            </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

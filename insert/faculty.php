@@ -6,152 +6,171 @@ session_start();
 
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<style>
-body {
-  font-family: "Lato", sans-serif;
-  width: 100%;
-  height: 100vh;
-}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            width: 100%;
+            height: 100vh;
+        }
 
-.sidebar {
-  height: 100%;
-  width: 0px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 5vw; 
-}
+        .sidebar {
+            height: 100%;
+            width: 0px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 5vw;
+        }
 
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
 
-.sidebar a:hover {
-  color: #f1f1f1;
-}
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
 
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 150px;
-}
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 150px;
+        }
 
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  margin-left:10px;
-  position: fixed;
-  top:10px;
-}
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            margin-left: 10px;
+            position: fixed;
+            top: 10px;
+        }
 
-.openbtn:hover {
-  background-color: #444;
-}
+        .openbtn:hover {
+            background-color: #444;
+        }
 
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-  
-  
-}
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
 
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
-  .st{
-        color:white;
-    }
-    .logout{
-      position:fixed;
-      top:20px;
-      right:10px;
-    }
-    .student{
-        width:100%;
-        height:100%;
-       padding:0 15vw;
-       margin-top:3vw;
-     
-      
-      
-
-}
-.display_student{
-    display:none;
-}
-.faculty{
-    width:100%;
-        height:100%;
-       padding:0 15vw;
-       margin-top:3vw;
-}
-.heading{
-    width:100%;
-        height:100%;
-       text-align:center;
-       color:black;
-       font-weight:900;
-       text-decoration:underline;
- 
-      
-}
-.tabless{
-    margin-top:5vw;
-}
-table{
-    color:rgb(131, 131, 131);
-}
+        }
 
 
-i{
-    font-size:30px;
-}
-.display_student{
- margin-top:5vw;
- display:flex;
-      align-items:center;
-      justify-content:center;
-}
-tr,td,th{
-  border:2px solid black;
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+
+        .st {
+            color: white;
+        }
+
+        .logout {
+            position: fixed;
+            top: 20px;
+            right: 10px;
+        }
+
+        .student {
+            width: 100%;
+            height: 100%;
+            padding: 0 15vw;
+            margin-top: 3vw;
 
 
-     
-     
-}
-.dropdown-content,.dropdown-content1{
-display:none;
- 
-}
-.sidebar {
+
+
+        }
+
+        .display_student {
+            display: none;
+        }
+
+        .faculty {
+            width: 100%;
+            height: 100%;
+            padding: 0 15vw;
+            margin-top: 3vw;
+        }
+
+        .heading {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: black;
+            font-weight: 900;
+            text-decoration: underline;
+
+
+        }
+
+        .tabless {
+            margin-top: 5vw;
+        }
+
+        table {
+            color: rgb(131, 131, 131);
+        }
+
+
+        i {
+            font-size: 30px;
+        }
+
+        .display_student {
+            margin-top: 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        tr,
+        td,
+        th {
+            border: 2px solid black;
+
+
+
+
+        }
+
+        .dropdown-content,
+        .dropdown-content1 {
+            display: none;
+
+        }
+
+        .sidebar {
             height: 100%;
             width: 250px;
             position: fixed;
@@ -162,8 +181,8 @@ display:none;
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 5vw;
-            color:black;
-          
+            color: black;
+
         }
 
         .sidebar a {
@@ -172,15 +191,15 @@ display:none;
             font-size: 25px;
             display: block;
             transition: 0.3s;
-            color:#FE6F27;
+            color: #FE6F27;
         }
 
         .sidebar a:hover {
-           color:#2F2F2F;
-           background-color:#FE6F27;
-           border-radius:0 13px 0 30px; 
-           transition:all .5s ease;
-           transform:translateY(-2px);
+            color: #2F2F2F;
+            background-color: #FE6F27;
+            border-radius: 0 13px 0 30px;
+            transition: all .5s ease;
+            transform: translateY(-2px);
         }
 
         .sidebar .closebtn {
@@ -189,25 +208,23 @@ display:none;
             right: 25px;
             font-size: 36px;
             margin-left: 150px;
-            color:#FE6F27;
+            color: #FE6F27;
         }
 
         .openbtn {
             font-size: 20px;
             cursor: pointer;
-            background-color:#FE6F27;
+            background-color: #FE6F27;
             color: white;
             padding: 10px 15px;
             border: none;
-           
+
             position: fixed;
             top: 10px;
             z-index: 999999;
         }
 
-        .openbtn:hover {
-           
-        }
+   
 
         #main {
             transition: margin-left .5s;
@@ -218,65 +235,82 @@ display:none;
         .card {
             margin: 20px;
         }
-        a{
-            text-decoration:none;
+
+        a {
+            text-decoration: none;
         }
-      
-        .logout{
-            position:fixed;
-            top:.5vw;
-            right:10px;
+
+        .logout {
+            position: fixed;
+            top: .5vw;
+            right: 10px;
         }
-        .rt{
-            position:absolute;
-            left:10px;
-            background color:#2F2F2F;
+
+        .rt {
+            position: absolute;
+            left: 10px;
+            background-color: #2F2F2F;
         }
-        .overlay{
-            width:100%;
-            height:10vh;
-            background-color:#2F2F2F;
-            position:absolute;
-            left:0;
-            top:-10%;
-            z-index:-9;
+
+        .overlay {
+            width: 100%;
+            height: 10vh;
+            background-color: #2F2F2F;
+            position: absolute;
+            left: 0;
+            top: -10%;
+            z-index: -9;
         }
-        .dropdown-content{
-          display:none;
+
+        .dropdown-content {
+            display: none;
         }
-        .display_student{
-            display:none;
+
+        .display_student {
+            display: none;
         }
-        .cardfac:hover{
-transform:translateY(-10px);
-transition:all .5s ease;
-box-shadow:2px 7px 2px grey;
-scale:1.1;
+
+        .cardfac:hover {
+            transform: translateY(-10px);
+            transition: all .5s ease;
+            box-shadow: 2px 7px 2px grey;
+            scale: 1.1;
 
         }
-       .card{
-        border:2px solid black;
-        transform:translateY(-20px);
-        display:inline-block;
-        white-space:nowarp;
-      
-       }
-        .facultymain{
-            margin-top:15vw;
-        
+
+        body {
+            overflow-x: hidden;
         }
-    
-</style>
+
+        .card {
+            border: 2px solid black;
+            transform: translateY(-20px);
+            display: inline-block;
+            white-space: nowarp;
+
+        }
+
+        .facultymain {
+            margin-top: 15vw;
+
+        }
+
+        .yt:hover {
+            box-shadow: 2px 2px 2px grey;
+            transform: translateY(-10px);
+        }
+    </style>
 </head>
-<body>
-  
-<div class="logout">
-<form action="" method="post">
-  <button class="logout btn btn-danger" name="logout">Logout</button>
-  </form>
-</div>
 
-<?php
+<body>
+
+    <div class="logout">
+        <form action="" method="post">
+            <button class="logout btn btn-danger" name="logout">Logout</button>
+        </form>
+    </div>
+
+    <?php
 if(isset($_POST['logout'])){
   session_unset();
   echo "<script>window.open('../login.php','_self')</script>";
@@ -285,40 +319,56 @@ if(isset($_POST['logout'])){
 
 
 ?>
-<?php
+    <?php
 if($_SESSION['email'] ==true){
   ?>
+    <div class="ov"
+        style="width:100vw;height:100vh;position:absolute;background-color:rgba(0,0,0,0.7);z-index:-2222222"></div>
+    <div class="ov"
+        style="width:100vw;height:100vh;position:absolute;top:100%;background-color:rgba(0,0,0,0.7);z-index:-2222222">
+    </div>
+    <div class="ov"
+        style="width:100vw;height:100vh;position:absolute;top:200%;background-color:rgba(0,0,0,0.7);z-index:-2222222">
+    </div>
+    <div class="videos" style="height:100%;position:absolute;z-index:-11111111111">
+        <video autoplay muted loop src="../videos/4301307-hd_1920_1080_30fps.mp4"></video>
+    </div>
+    <div class="videos" style="height:100%;position:absolute;top:100%;z-index:-11111111111">
+        <video autoplay muted loop src="../videos/4301307-hd_1920_1080_30fps.mp4"></video>
+    </div>
 
-
-<div class="overlay"></div>
-<div id="mySidebar" class="sidebar">
- <span class="span" style="background-color:none;font-size:2vw; position:absolute;top : 10px;color:white;left:220px;cursor:pointer;color:#FE6F27" onclick="closeNav()" >x</span>
-    <a href="home.php" class="time" >Home</a>
-    <a href="time.php" class="time">Time Table</a>
-    <a href="att.php" class="time">Attendance</a>
-    <a href="learn.php" class="learn">Learning Material</a>
-    <a href="fees.php" class="fees">Fees</a>
-    <a href="#" class="fac" id="fac" style="color:white">Faculty</a>
-    <div class="dropdown">
-        <div class="dropdown-content">
-            <a href="#" class="add" data-target="#addStudentModal" data-toggle="modal">Add Faculty</a>
-            <a href="#" class="check">Check Faculty</a>
+    <div class="overlay" style="position:fixed;"></div>
+    <div id="mySidebar" class="sidebar">
+        <span class="span"
+            style="background-color:none;font-size:2vw; position:absolute;top : 10px;color:white;left:220px;cursor:pointer;color:#FE6F27"
+            onclick="closeNav()">x</span>
+        <a href="home.php" class="time">Home</a>
+        <a href="time.php" class="time">Time Table</a>
+        <a href="att.php" class="time">Attendance</a>
+        <a href="learn.php" class="learn">Learning Material</a>
+        <a href="fees.php" class="fees">Fees</a>
+        <a href="#" class="fac" id="fac" style="color:white">Faculty</a>
+        <div class="dropdown">
+            <div class="dropdown-content">
+                <a href="#" class="add" data-target="#addStudentModal" data-toggle="modal">Add Faculty</a>
+                <a href="#" class="check">Check Faculty</a>
+            </div>
+        </div>
+        <a href="students.php" class="st">Students</a>
+        <div class="dropdown">
+            <div class="dropdown-content1">
+                <a href="#" class="addstud" data-target="#addStudentModal" data-toggle="modal">Add Student</a>
+                <a href="#check" class="checkstud">Check Students</a>
+            </div>
         </div>
     </div>
-    <a href="students.php" class="st">Students</a>
-    <div class="dropdown">
-        <div class="dropdown-content1">
-            <a href="#" class="addstud" data-target="#addStudentModal" data-toggle="modal">Add Student</a>
-            <a href="#check" class="checkstud">Check Students</a>
-        </div>
-    </div>
-</div>
 
-<div id="main" style="position:relative;">
-    <button class="openbtn rt" onclick="openNav()" style="position:fixed;">☰ Admin Panel</button>
+    <div id="main" style="position:relative;">
+        <button class="openbtn rt" onclick="openNav()" style="position:fixed;">☰ Admin Panel</button>
 
-    <div class="mo">
-            <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="addStudentModalLabel" aria-hidden="true">
+        <div class="mo">
+            <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog"
+                aria-labelledby="addStudentModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -339,11 +389,12 @@ if($_SESSION['email'] ==true){
                                 </div>
                                 <div class="form-group">
                                     <label for="phone">DOB</label>
-                                    <input type="date" class="form-control" id="dob" name="dob"  required>
+                                    <input type="date" class="form-control" id="dob" name="dob" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="phone"> Phone Number</label>
-                                    <input type="text" class="form-control" id="phone" name="phone" pattern="[0-9]{10}" required>
+                                    <input type="text" class="form-control" id="phone" name="phone" pattern="[0-9]{10}"
+                                        required>
                                 </div>
                                 <div class="form-group">
                                     <label for="address">Address:</label>
@@ -351,18 +402,18 @@ if($_SESSION['email'] ==true){
                                 </div>
                                 <div class="form-group">
                                     <label for="address">Experience:</label>
-                                    <input type="number" class="form-control" id="exper" name="exper" required/>
+                                    <input type="number" class="form-control" id="exper" name="exper" required />
                                 </div>
-                                    <div class="form-group">
+                                <div class="form-group">
                                     <label for="gender">Department</label>
                                     <select class="form-control" id="department" name="department" required>
-                                    <option value="">Select Department</option>
+                                        <option value="">Select Department</option>
                                         <option value="BCA">BCA</option>
                                         <option value="Bcom">Bcom</option>
                                         <option value="BBA">BBA</option>
                                     </select>
                                 </div>
-                                                    
+
                                 <div class="form-group">
                                     <label for="gender">Gender:</label>
                                     <select class="form-control" id="gender" name="gender" required>
@@ -371,10 +422,11 @@ if($_SESSION['email'] ==true){
                                         <option value="female">Female</option>
                                     </select>
                                 </div>
-                              
+
                                 <div class="form-group">
                                     <label for="image">Upload Image:</label>
-                                    <input type="file" class="form-control-file" id="image" name="image" required accept="image/*">
+                                    <input type="file" class="form-control-file" id="image" name="image" required
+                                        accept="image/*">
                                 </div>
                                 <input type="submit" class="btn btn-primary" name="insertfac">
                             </form>
@@ -383,7 +435,7 @@ if($_SESSION['email'] ==true){
                 </div>
             </div>
         </div>
-         <?php
+        <?php
 
  if(isset($_POST['insertfac'])){
      // Retrieve form data
@@ -432,7 +484,6 @@ if($_SESSION['email'] ==true){
      mysqli_close($conn);
  }
  ?>
- 
 
 
 
@@ -441,54 +492,70 @@ if($_SESSION['email'] ==true){
 
 
 
- <div class="faculty">
-    <div class="heading">
-        <div class="stu"><h1></h1></div>
 
-</div>
+        <div class="faculty">
+            <div class="heading">
+                <div class="stu">
+                    <h1></h1>
+                </div>
 
-<div class="display_student" style="position:relative;left:-7%">
-        <div class="container mt-8" >
-            <input type="text" class="form-control mb-3" id="searchInput" placeholder="Search...">
-            <div class="">
-                <table class="table table-striped table-bordered" >
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>Faculty ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Experience</th>
-                            <th>Department</th>
-                            <th>Update</th>
-                            <th>Delete</th>
-                            <th>View</th>
-                        </tr>
-                    </thead>
-                    <tbody id="studentTableBody">
-                        <!-- PHP code to fetch and display student records will go here -->
-                        <?php
+            </div>
+
+            <div class="display_student" style="position:relative;left:-7%">
+                <div class="container mt-8">
+                    <input type="text" class="form-control mb-3" id="searchInput" placeholder="Search...">
+                    <div class="">
+                        <table class="table table-striped table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Faculty ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Experience</th>
+                                    <th>Department</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                    <th>View</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentTableBody">
+                                <!-- PHP code to fetch and display student records will go here -->
+                                <?php
                         require('conn.php');
                         $select = "SELECT * FROM faculty";
                         $result = mysqli_query($con, $select);
                         while ($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr>
-                                <td><?php echo $row['fac_id'] ?></td>
-                                <td><?php echo $row['name'] ?></td>
-                                <td><?php echo $row['email'] ?></td>
-                                <td><?php echo $row['experience'] ?></td>
-                                <td><?php echo $row['dep'] ?></td>
-                                <td><a href="update2.php?id=<?php echo $row['fac_id'] ?>" class="btn btn-outline-primary">Update</a></td>
-                                <td><a href="facdel.php?id=<?php echo $row['fac_id'] ?>" class="btn btn-outline-danger">Delete</a></td>
-                                <td><a href="view2.php?id=<?php echo $row['fac_id'] ?>" class="btn btn-outline-success">View</a></td>
-                            </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
+                                <tr>
+                                    <td>
+                                        <?php echo $row['fac_id'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row['name'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row['email'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row['experience'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row['dep'] ?>
+                                    </td>
+                                    <td><a href="update2.php?id=<?php echo $row['fac_id'] ?>"
+                                            class="btn btn-outline-primary">Update</a></td>
+                                    <td><a href="facdel.php?id=<?php echo $row['fac_id'] ?>"
+                                            class="btn btn-outline-danger">Delete</a></td>
+                                    <td><a href="view2.php?id=<?php echo $row['fac_id'] ?>"
+                                            class="btn btn-outline-success">View</a></td>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-<?php
+            <?php
 }
 else{
   echo "<script>window.open('../login.php','_self')</script>";
@@ -496,149 +563,174 @@ else{
 ?>
 
 
-<div style="width:100%;position:absolute;left:10%;top:-2%;">
-<div class="facultymain" >
-                
-             <?php
+            <div style="width:100%;position:absolute;left:10%;top:-2%;overflow:hidden;z-index:-9999">
+
+                <div class="facultymain" style="overflow:hidden;">
+
+                    <?php
                         require('conn.php');
                         $select = "SELECT * FROM faculty";
                         $result = mysqli_query($con, $select);
                         while ($row = mysqli_fetch_array($result)) {
                             ?>
-                           <div class="card cardfac" style="width: 18rem;border-radius:20px">
-  <img class="card-img-top" src="<?php echo $row['img']?>" alt="Card image cap" width="18rem" height="250vh" style="border-radius:20px;border:2px solid black;">
-  <div class="card-body">
-    <p class="card-text">NAME:  <?php echo $row['name'] ?></p>
-  </div>
-</div>  
-                        <?php } ?>
-                  
+                    <div class="container utf" style="position:relative;">
+                        <div class="card yt mx-auto"
+                            style="width: 48rem;height:10rem;overflow:hidden;border:1px solid black;border-radius:20px">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+
+                                    <img src="<?php echo $row['img'] ?>" width="20px" height="160px" class="card-img"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+
+                                        <h5 class="card-title">Name:
+                                            <?php echo $row['name'] ?>
+                                        </h5>
+
+                                        <h5 class="card-text">Experience:
+                                            <?php echo $row['experience'] ?>
+                                        </h5>
+                                        <h5>Department:
+                                            <?php echo $row['dep'] ?>
+                                        </h5>
+
+                                        <div class="d-flex justify-content-between align-items-center">
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <?php } ?>
+
+                </div>
             </div>
-            </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-<script src="scr.js"></script>
-   
-   <script>
-      var add=document.querySelector('.add');
-   var check=document.querySelector('.check');
-var display_student=document.querySelector('.display_student');
-add.addEventListener('click',function(){
-    display_student.style.display="none";
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-})
-check.addEventListener('click',function(){
-    display_student.style.display="block";
-    facultymain.style.display="none";
-})
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+            <script src="scr.js"></script>
 
+            <script>
+                var add = document.querySelector('.add');
+                var check = document.querySelector('.check');
+                var display_student = document.querySelector('.display_student');
+                add.addEventListener('click', function () {
+                    display_student.style.display = "none";
+
+                })
+                check.addEventListener('click', function () {
+                    display_student.style.display = "block";
+                    facultymain.style.display = "none";
+                })
 
 
 
 
- 
-    var mo=document.querySelector('.mo');
-var fac=document.querySelector('.fac');
-
-var st=document.querySelector('.st');
-var dropdown_content=document.querySelector('.dropdown-content');
-var dropdown_content1=document.querySelector('.dropdown-content1');
-var facultymain=document.querySelector('.facultymain');
 
 
+                var mo = document.querySelector('.mo');
+                var fac = document.querySelector('.fac');
 
-count=1;
-fac.addEventListener('click', function(){
-    facultymain.style.display="block";
-    display_student.style.display="none";
-   
-  if(count==1){
-    dropdown_content.style.display="block";
-   
+                var st = document.querySelector('.st');
+                var dropdown_content = document.querySelector('.dropdown-content');
+                var dropdown_content1 = document.querySelector('.dropdown-content1');
+                var facultymain = document.querySelector('.facultymain');
 
-    count=0;
-  }
-  else{
-    dropdown_content.style.display="none";
-    count=1;
-  }
-});
-count1=0;
-st.addEventListener('click', function(){
-  if(count1==1){
-    dropdown_content1.style.display="block";
-    count1=0;
-  }
-  else{
-    dropdown_content1.style.display="none";
-    count1=1;
-  }
-});
-      var t1=gsap.timeline();
-t1.from('.sidebar',{
-    x:-4000,
-    opacity:1,
-    duration:.6
-})
-t1.from('.openbtn',{
-    y:-100,
-   
-})
-    t1.to('.overlay',{
-        y:"65"
-    })
-    t1.from('.logout',{
-        y:"-45"
-    })
-    t1.from('.cardfac',{
-y:-10000,
-duration:.6,
-stagger:.4
-    })
-  
-     document.addEventListener('DOMContentLoaded', function () {
-        const searchInput = document.getElementById('searchInput');
-        const tableBody = document.getElementById('studentTableBody').getElementsByTagName('tr');
 
-        searchInput.addEventListener('input', function () {
-            const searchTerm = searchInput.value.toLowerCase();
 
-            for (let i = 0; i < tableBody.length; i++) {
-                const row = tableBody[i];
-                let found = false;
-                for (let j = 0; j < row.cells.length; j++) {
-                    const cellValue = row.cells[j].textContent.toLowerCase();
-                    if (cellValue.includes(searchTerm)) {
-                        found = true;
-                        break;
+                count = 1;
+                fac.addEventListener('click', function () {
+                    facultymain.style.display = "block";
+                    display_student.style.display = "none";
+
+                    if (count == 1) {
+                        dropdown_content.style.display = "block";
+
+
+                        count = 0;
                     }
-                }
-                row.style.display = found ? '' : 'none';
-               
-            }
-        });
-    });
+                    else {
+                        dropdown_content.style.display = "none";
+                        count = 1;
+                    }
+                });
+                count1 = 0;
+                st.addEventListener('click', function () {
+                    if (count1 == 1) {
+                        dropdown_content1.style.display = "block";
+                        count1 = 0;
+                    }
+                    else {
+                        dropdown_content1.style.display = "none";
+                        count1 = 1;
+                    }
+                });
+                var t1 = gsap.timeline();
+                t1.from('.sidebar', {
+                    x: -4000,
+                    opacity: 1,
+                    duration: .6
+                })
+                t1.from('.openbtn', {
+                    y: -100,
 
- 
+                })
+                t1.to('.overlay', {
+                    y: "65"
+                })
+                t1.from('.logout', {
+                    y: "-45"
+                })
+                t1.from('.utf', {
+                    y: -1000,
+                    duration: 1,
+
+                })
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    const searchInput = document.getElementById('searchInput');
+                    const tableBody = document.getElementById('studentTableBody').getElementsByTagName('tr');
+
+                    searchInput.addEventListener('input', function () {
+                        const searchTerm = searchInput.value.toLowerCase();
+
+                        for (let i = 0; i < tableBody.length; i++) {
+                            const row = tableBody[i];
+                            let found = false;
+                            for (let j = 0; j < row.cells.length; j++) {
+                                const cellValue = row.cells[j].textContent.toLowerCase();
+                                if (cellValue.includes(searchTerm)) {
+                                    found = true;
+                                    break;
+                                }
+                            }
+                            row.style.display = found ? '' : 'none';
+
+                        }
+                    });
+                });
 
 
 
 
 
-   </script>
-   
+
+
+            </script>
+
 </body>
-</html> 
 
-
-
-
-
-
-
+</html>

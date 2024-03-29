@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-echo  $_SESSION['facultyid'];
+
 
 ?>
 
@@ -125,13 +125,110 @@ echo  $_SESSION['facultyid'];
             top: 20px;
             right: 10px;
         }
+        .logout {
+            position: fixed;
+            top: 1vw;
+            right: 10px;
+        }
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #2F2F2F;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 5vw;
+            color:black;
+          
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            display: block;
+            transition: 0.3s;
+            color:#FE6F27;
+        }
+
+        .sidebar a:hover {
+           color:#2F2F2F;
+           background-color:#FE6F27;
+           border-radius:0 13px 0 30px; 
+           transition:all .5s ease;
+           transform:translateY(-2px);
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 150px;
+            color:#FE6F27;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color:#FE6F27;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+           
+            position: fixed;
+            top: 10px;
+            z-index: 999999;
+        }
+
+        .openbtn:hover {
+           
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+            margin-left: 250px;
+        }
+
+        .card {
+            margin: 20px;
+        }
+        a{
+            text-decoration:none;
+        }
+        .dropdown-content,.dropdown-content1{
+            display:none;
+        }
+        .logout{
+            position:fixed;
+            top:.5vw;
+            right:10px;
+        }
+        .rt{
+            position:absolute;
+            left:10px;
+            background color:#2F2F2F;
+        }
+        .overlay{
+            width:100%;
+            height:10vh;
+            background-color:#2F2F2F;
+            position:absolute;
+            left:0;
+            top:-10%;
+            z-index:-9;
+        }
     </style>
 </head>
 
 <body>
     <div class="logout">
         <form action="" method="post">
-            <button class="logout" name="logout">Logout</button>
+            <button class="logout btn btn-danger" name="logout">Logout</button>
         </form>
     </div>
     <?php
@@ -147,23 +244,23 @@ echo  $_SESSION['facultyid'];
     if ($_SESSION['facultyid'] == true) {
 
     ?>
-        <div id="mySidebar" class="sidebar">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-            <a href="factime.php" class="time">Time Table</a>
-            <a href="#" class="learn">Learning Material</a>
-            <a href="faclearnsee.php" class="learn">Check Learning Material</a>
-            <a href="facatt.php" class="">Attendance</a>
-            <a href="facattrep.php" class="">Attendance Report</a>
-        </div>
+        <div class="overlay" style="position:fixed;"></div>
+<div id="mySidebar" class="sidebar">
+ <span class="span" style="background-color:none;font-size:2vw; position:fixed;top:10px;color:white;left:220px;cursor:pointer;color:#FE6F27" onclick="closeNav()" >x</span>
+ <a href="factime.php" class="time" >Time Table</a>
+        <a href="#" class="learn" style="color:white;">Learning Material</a>
+        <a href="faclearnsee.php" class="learn">Check Learning Material</a>
+        <a href="facatt.php" class="">Attendance</a>
+    
+ 
+</div>
 
+<div id="main">
+    <button class="openbtn rt" onclick="openNav()" style="position:fixed;">☰ Admin Panel</button>
 
         </div>
-        <div id="main">
-            <button class="openbtn" onClick="openNav()">☰ Menu</button>
-
-        </div>
-        <div class="container">
-            <div class="row justify-content-center">
+        <div class="container" style="overflow:hidden">
+            <div class="row r justify-content-center" style="overflow:hidden">
                 <div class="col-md-6">
                     <h2 class="text-center">Learning Material</h2>
                     <form action="" method="post" enctype="multipart/form-data">
@@ -217,6 +314,7 @@ echo  $_SESSION['facultyid'];
                             <input type="text" class="form-control" id="fileName" name="name" placeholder="Enter File Name">
                         </div>
                         <input type="submit" value="Upload" name="upload" class="btn btn-primary btn-block">
+                        <button class="btn btn-block btn-success" ><a href="faclearnsee.php" style="text-decoration:none;color:white;">Check Uploaded Materials</a></button>
                     </form>
                     <div id="fileList"></div>
                 </div>
@@ -249,8 +347,34 @@ echo  $_SESSION['facultyid'];
         header('location:../faclogin.php');
     }
     ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
     <script src="scr.js">
+    </script>
+    <script>
+        var t1=gsap.timeline();
+t1.from('.sidebar',{
+    x:-4000,
+    opacity:1,
+    duration:.6
+})
+t1.from('.openbtn',{
+    y:-100,
+   
+})
+    t1.to('.overlay',{
+        y:"65"
+    })
+    t1.from('.logout',{
+        y:"-45"
+    })
+    t1.from('.gsa',{
+        y:190,
+        stagger:.2
+    })
+    t1.from('.r',{
+        y:800
+    })
     </script>
 </body>
 

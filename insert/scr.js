@@ -1,4 +1,4 @@
-var st = document.querySelector(".st");
+
 
 var checkfac = document.querySelector(".checkfac");
 
@@ -51,7 +51,7 @@ function openNav() {
 // Function to close the sidebar
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
+  document.getElementById("main").style.marginLeft = "px";
 }
 
 // Function to generate a timetable for a single section with provided subjects

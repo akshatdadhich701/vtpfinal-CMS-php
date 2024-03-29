@@ -33,6 +33,7 @@
 
         .card:hover {
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            transform:translateY(-10%)
         }
 
         body {
@@ -63,15 +64,17 @@
         }
 
         h5 {
-            font-size: 2vw;
+            font-size: 2.2vw;
+            margin-top:1vw;
         }
+
     </style>
 </head>
 
 <body>
 
     <h2 class="text-center mb-4">PDF File Management</h2>
-    <button class="btn btn-primary" onClick="goback()">BACK</button>
+    <button class="btn btn-primary" onClick="goback()" style="position:absolute;top:10%;left:15%">BACK</button>
 
 
     <?php
@@ -81,14 +84,14 @@
     while ($row = mysqli_fetch_array($result)) {
     ?>
         <div class="container">
-            <div class="card mx-auto" style="width: 18rem;">
+            <div class="card mx-auto" style="width: 38rem;display:flex; align-items:flex-start;" >
                 <div class="card-body">
                     <div class="hello">
                         <i class="ri-file-pdf-2-line"></i>
                         <h5 class="card-title"><?php echo $row['name'] ?></h5>
                     </div>
                     <a href="<?php echo $row['file'] ?>" class="btn btn-primary mr-2">View</a>
-                    <a href="faclearndel.php?id=<?php echo $row['name'] ?>"><input type="submit" name="delete" value="DELETE" class="btn btn-danger"></a>
+                    <a href="faclearndel.php?id=<?php echo $row['name'] ?>"><input type="submit" name="delete" value="DELETE" class="btn btn-danger" style="position:relative;margin-top:0.6vw;"></a>
                 </div>
             </div>
         </div>
